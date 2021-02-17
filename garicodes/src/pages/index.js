@@ -110,7 +110,7 @@ const IndexPage = () => {
         </div>
         <div id="contact">
           <h2>Contact</h2>
-          <Button variant="danger">Danger</Button>
+          <Button variant="danger">Red Danger</Button>
         </div>
         
       </main>
