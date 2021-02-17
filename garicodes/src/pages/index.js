@@ -1,7 +1,9 @@
 import * as React from "react";
-import { css } from "@emotion/react"
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button'
+import { css } from "@emotion/react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Button from "react-bootstrap/Button";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
 
 // styles
 const pageStyles = {
@@ -20,13 +22,7 @@ const headingAccentStyles = {
 const paragraphStyles = {
   marginBottom: 48,
 };
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-};
+
 const listStyles = {
   marginBottom: 96,
   paddingLeft: 0,
@@ -37,8 +33,6 @@ const listItemStyles = {
   maxWidth: "560px",
   display: "inline",
   float: "right",
-  marginLeft: "10px",
-  marginRight: "10px"
 };
 
 const listItemLogo = {
@@ -48,7 +42,7 @@ const listItemLogo = {
   display: "inline",
   float: "left",
   marginLeft: "10px",
-  marginRight: "10px"
+  marginRight: "10px",
 };
 
 const linkStyle = {
@@ -70,20 +64,53 @@ const descriptionStyle = {
   fontSize: "14px",
 };
 
+// Color Schemes
+const navColor = {
+  backgroundColor: "#ff4e4e"
+};
+
+const navText = {
+  color: "#f2f3f4"
+}
+
+const left = {
+  float: "left"
+}
+
 // markup
 const IndexPage = () => {
   return (
     <html>
-      <nav style={{paddingTop: "0px"}}>
-        <ul style={listStyles}>
-          <li style={listItemStyles}><a href="#contact" style={linkStyle}>Reach Me</a></li>
-          <li style={listItemStyles}><a href="#projects" style={linkStyle}>Projects</a></li>
-          <li style={listItemStyles}><a href="#exp" style={linkStyle}>Experience</a></li>
-          <li style={listItemStyles}><a href="#skills" style={linkStyle}>Skills</a></li>
-          <li style={listItemStyles}><a href="#about" style={linkStyle}>About</a></li>
-          <li style={listItemLogo}>Name</li>
-        </ul>
-      </nav>
+      <Navbar sticky="top" style={navColor} variant="light">
+        <Navbar.Brand className="justify-content-start" href="#home">GARICODES</Navbar.Brand>
+        <Nav className="justify-content-end" >
+        <Nav.Item>
+            <Nav.Link style={navText} href="#about">
+              About
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link style={navText} href="#skills">
+              Skills
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link style={navText} href="#exp">
+              Experience
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link style={navText} href="#projects">
+              Projects
+            </Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link style={navText} href="#contact">
+              Reach Me
+            </Nav.Link>
+          </Nav.Item>
+        </Nav>
+      </Navbar>
       <main style={pageStyles}>
         <title>Gariel Giles</title>
         <h1 style={headingStyles}>
@@ -101,7 +128,9 @@ const IndexPage = () => {
         </div>
         <div id="skills">
           <h2>Tech Stack</h2>
-          <p style={paragraphStyles}>Here are technologies I have experience with:</p>
+          <p style={paragraphStyles}>
+            Here are technologies I have experience with:
+          </p>
         </div>
         <div id="exp">
           <h2>Experience</h2>
@@ -113,7 +142,6 @@ const IndexPage = () => {
           <h2>Contact</h2>
           <Button variant="danger">Red Danger</Button>
         </div>
-        
       </main>
     </html>
   );
