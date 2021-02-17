@@ -74,11 +74,12 @@ const IndexPage = () => {
     <html>
       <nav style={{paddingTop: "0px"}}>
         <ul style={listStyles}>
-          <li style={listItemStyles}><a>Reach Me</a></li>
-          <li style={listItemStyles}><a>Projects</a></li>
-          <li style={listItemStyles}><a>Experience</a></li>
+          <li style={listItemStyles}><a href="#contact" style={linkStyle}>Reach Me</a></li>
+          <li style={listItemStyles}><a href="#projects" style={linkStyle}>Projects</a></li>
+          <li style={listItemStyles}><a href="#exp" style={linkStyle}>Experience</a></li>
           <li style={listItemStyles}><a href="#skills" style={linkStyle}>Skills</a></li>
-          <li style={listItemLogo}>Logo</li>
+          <li style={listItemStyles}><a href="#about" style={linkStyle}>About</a></li>
+          <li style={listItemLogo}>Name</li>
         </ul>
       </nav>
       <main style={pageStyles}>
@@ -93,11 +94,22 @@ const IndexPage = () => {
             🎉🎉🎉
           </span>
         </h1>
+        <div id="about">
+          <h2>Fun Facts</h2>
+        </div>
         <div id="skills">
           <h2>Tech Stack</h2>
           <p style={paragraphStyles}>Here are technologies I have experience with:</p>
         </div>
-       
+        <div id="exp">
+          <h2>Experience</h2>
+        </div>
+        <div id="projects">
+          <h2>Projects</h2>
+        </div>
+        <div id="contact">
+          <h2>Contact</h2>
+        </div>
       </main>
     </html>
   );
