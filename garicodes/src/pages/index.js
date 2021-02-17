@@ -1,5 +1,6 @@
 import * as React from "react";
 import { css } from "@emotion/react"
+import Button from 'react-bootstrap/Button'
 
 // styles
 const pageStyles = {
@@ -109,7 +110,9 @@ const IndexPage = () => {
         </div>
         <div id="contact">
           <h2>Contact</h2>
+          <Button variant="danger">Danger</Button>
         </div>
+        
       </main>
     </html>
   );
