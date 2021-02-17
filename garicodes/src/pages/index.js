@@ -1,4 +1,5 @@
 import * as React from "react";
+import { css } from "@emotion/react"
 
 // styles
 const pageStyles = {
@@ -32,13 +33,28 @@ const listItemStyles = {
   fontWeight: "300",
   fontSize: "24px",
   maxWidth: "560px",
+  display: "inline",
+  float: "right",
+  marginLeft: "10px",
+  marginRight: "10px"
+};
+
+const listItemLogo = {
+  fontWeight: "300",
+  fontSize: "24px",
+  maxWidth: "560px",
+  display: "inline",
+  float: "left",
+  marginLeft: "10px",
+  marginRight: "10px"
 };
 
 const linkStyle = {
   color: "#8954A8",
   fontWeight: "bold",
-  fontSize: "16px",
+  fontSize: "20px",
   verticalAlign: "5%",
+  listStyleType: "none",
 };
 
 const docLinkStyle = {
@@ -52,61 +68,17 @@ const descriptionStyle = {
   fontSize: "14px",
 };
 
-const docLink = {
-  text: "Documentation",
-  url: "https://www.gatsbyjs.com/docs/",
-  color: "#8954A8",
-};
-// data
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
-  },
-  {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
-  },
-  {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
-  },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#000000",
-  },
-];
-
 // markup
 const IndexPage = () => {
   return (
     <html>
-      <nav>
-        <img className="logo"></img>
-        <ul>
-          <li>Skills</li>
-          <li>Experience</li>
-          <li>Projects</li>
-          <li>Reach Me</li>
+      <nav style={{paddingTop: "0px"}}>
+        <ul style={listStyles}>
+          <li style={listItemStyles}><a>Reach Me</a></li>
+          <li style={listItemStyles}><a>Projects</a></li>
+          <li style={listItemStyles}><a>Experience</a></li>
+          <li style={listItemStyles}><a href="#skills" style={linkStyle}>Skills</a></li>
+          <li style={listItemLogo}>Logo</li>
         </ul>
       </nav>
       <main style={pageStyles}>
@@ -121,32 +93,11 @@ const IndexPage = () => {
             🎉🎉🎉
           </span>
         </h1>
-        <p style={paragraphStyles}>
-          Edit to see this page update in real-time.
-        </p>
-        {/* <ul style={listStyles}>
-        <li style={docLinkStyle}>
-          <a
-            style={linkStyle}
-            href={`${docLink.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-          >
-            {docLink.text}
-          </a>
-        </li>
-        {links.map(link => (
-          <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
-            <span>
-              <a
-                style={linkStyle}
-                href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-              >
-                {link.text}
-              </a>
-              <p style={descriptionStyle}>{link.description}</p>
-            </span>
-          </li>
-        ))}
-      </ul> */}
+        <div id="skills">
+          <h2>Tech Stack</h2>
+          <p style={paragraphStyles}>Here are technologies I have experience with:</p>
+        </div>
+       
       </main>
     </html>
   );
