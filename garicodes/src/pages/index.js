@@ -66,8 +66,15 @@ const descriptionStyle = {
 };
 
 const imgList = {
-  width: '50%',
-  height:'50'
+  width: '100%',
+  height:'100',
+}
+
+const logoList = {
+  listStyleType: 'none',
+  display: 'flex',
+  flexDirection: 'row',
+  // justifyContent: 'spacebetween'
 }
 
 // Color Schemes
@@ -145,7 +152,7 @@ const IndexPage = () => {
           <p style={paragraphStyles}>
             Here are technologies I have experience with:
           </p>
-          <ul style={{listStyleType: 'none'}}>
+          <ul style={logoList}>
             <li><Image src={reactLogo} style={imgList} /></li>
             <li><Image src={nodeLogo} style={imgList} /></li>
             <li><Image src={expLogo} style={imgList} /></li>
@@ -160,6 +167,7 @@ const IndexPage = () => {
         </div>
         <div id="exp">
           <h2>Experience</h2>
+          <Button href="../../src/Gariel_Giles_QAResume.PDF" size="lg">Resume</Button>
         </div>
         <div id="projects">
           <h2>Projects</h2>
