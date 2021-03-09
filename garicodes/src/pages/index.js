@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
+import Image from 'react-bootstrap/Image'
 
 // styles
 const pageStyles = {
@@ -64,6 +65,11 @@ const descriptionStyle = {
   fontSize: "14px",
 };
 
+const imgList = {
+  width: '50%',
+  height:'50'
+}
+
 // Color Schemes
 const navColor = {
   backgroundColor: "#ff4e4e"
@@ -73,9 +79,17 @@ const navText = {
   color: "#f2f3f4"
 }
 
-const left = {
-  float: "left"
-}
+// Required Images
+const reactLogo = require("../images/tech/react.png");
+const nodeLogo = require("../images/tech/node.png");
+const cssLogo = require("../images/tech/cssIMG.png");
+const expLogo = require("../images/tech/express.png");
+const bootLogo = require("../images/tech/bootstrap.png");
+const gatsbyLogo = require("../images/tech/gatsby.png");
+const htmlLogo = require("../images/tech/htmlIMG.png");
+const mochaLogo = require("../images/tech/mocha.png");
+const mongoLogo = require("../images/tech/mongo.png");
+const seleniumLogo = require("../images/tech/selenium.png")
 
 // markup
 const IndexPage = () => {
@@ -106,7 +120,7 @@ const IndexPage = () => {
           </Nav.Item>
           <Nav.Item>
             <Nav.Link style={navText} href="#contact">
-              Reach Me
+              Contact
             </Nav.Link>
           </Nav.Item>
         </Nav>
@@ -119,9 +133,9 @@ const IndexPage = () => {
           <span style={headingAccentStyles}>
             — Welcome to my crib! Take a tour and get to know me.{" "}
           </span>
-          <span role="img" aria-label="Party popper emojis">
+          {/* <span role="img" aria-label="Party popper emojis">
             🎉🎉🎉
-          </span>
+          </span> */}
         </h1>
         <div id="about">
           <h2>Fun Facts</h2>
@@ -131,6 +145,18 @@ const IndexPage = () => {
           <p style={paragraphStyles}>
             Here are technologies I have experience with:
           </p>
+          <ul style={{listStyleType: 'none'}}>
+            <li><Image src={reactLogo} style={imgList} /></li>
+            <li><Image src={nodeLogo} style={imgList} /></li>
+            <li><Image src={expLogo} style={imgList} /></li>
+            <li><Image src={htmlLogo} style={imgList} /></li>
+            <li><Image src={cssLogo} style={imgList} /></li>
+            <li><Image src={gatsbyLogo} style={imgList} /></li>
+            <li><Image src={bootLogo} style={imgList} /></li>
+            <li><Image src={mochaLogo} style={imgList} /></li>
+            <li><Image src={mongoLogo} style={imgList} /></li>
+            <li><Image src={seleniumLogo} style={imgList} /></li>
+          </ul>
         </div>
         <div id="exp">
           <h2>Experience</h2>
