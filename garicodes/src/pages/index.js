@@ -4,7 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import Image from 'react-bootstrap/Image'
+import Image from "react-bootstrap/Image";
+import Card from 'react-bootstrap/Card'
 
 // styles
 const pageStyles = {
@@ -66,29 +67,34 @@ const descriptionStyle = {
 };
 
 const imgList = {
-  width: '100%',
-  height:'100',
-}
+  // width: '100%',
+  minWidth: "90px",
+  maxWidth: "100px",
+  // paddingRight: '10%'
+};
 
 const logoList = {
-  listStyleType: 'none',
-  display: 'flex',
-  flexDirection: 'row',
-  // justifyContent: 'spacebetween'
-}
+  listStyleType: "none",
+  display: "flex",
+  flexWrap: "wrap",
+  justifyContent: "space-evenly",
+};
 
 // Color Schemes
 const navColor = {
-  backgroundColor: "#ff4e4e"
+  // backgroundColor: "#ff4e4e"
+  backgroundColor: "#ffffff",
 };
 
 const navText = {
-  color: "#f2f3f4"
-}
+  // color: "#f2f3f4"
+  color: "#232129",
+};
 
 // Required Images
 const reactLogo = require("../images/tech/react.png");
 const nodeLogo = require("../images/tech/node.png");
+const jsLogo = require("../images/tech/js.png");
 const cssLogo = require("../images/tech/cssIMG.png");
 const expLogo = require("../images/tech/express.png");
 const bootLogo = require("../images/tech/bootstrap.png");
@@ -96,16 +102,18 @@ const gatsbyLogo = require("../images/tech/gatsby.png");
 const htmlLogo = require("../images/tech/htmlIMG.png");
 const mochaLogo = require("../images/tech/mocha.png");
 const mongoLogo = require("../images/tech/mongo.png");
-const seleniumLogo = require("../images/tech/selenium.png")
+const seleniumLogo = require("../images/tech/selenium.png");
 
 // markup
 const IndexPage = () => {
   return (
     <html>
       <Navbar sticky="top" style={navColor} variant="light">
-        <Navbar.Brand className="justify-content-start" href="#home">GARICODES</Navbar.Brand>
-        <Nav className="justify-content-end" >
-        <Nav.Item>
+        <Navbar.Brand className="justify-content-start" href="#home">
+          GARICODES
+        </Navbar.Brand>
+        <Nav className="justify-content-end">
+          <Nav.Item>
             <Nav.Link style={navText} href="#about">
               About
             </Nav.Link>
@@ -148,29 +156,70 @@ const IndexPage = () => {
           <h2>Fun Facts</h2>
         </div>
         <div id="skills">
+          {/* style={{background: "lightblue", position: 'relative', left: '0%', right: '0%'}} */}
           <h2>Tech Stack</h2>
           <p style={paragraphStyles}>
             Here are technologies I have experience with:
           </p>
           <ul style={logoList}>
-            <li><Image src={reactLogo} style={imgList} /></li>
-            <li><Image src={nodeLogo} style={imgList} /></li>
-            <li><Image src={expLogo} style={imgList} /></li>
-            <li><Image src={htmlLogo} style={imgList} /></li>
-            <li><Image src={cssLogo} style={imgList} /></li>
-            <li><Image src={gatsbyLogo} style={imgList} /></li>
-            <li><Image src={bootLogo} style={imgList} /></li>
-            <li><Image src={mochaLogo} style={imgList} /></li>
-            <li><Image src={mongoLogo} style={imgList} /></li>
-            <li><Image src={seleniumLogo} style={imgList} /></li>
+            <li>
+              <Image src={reactLogo} style={imgList} />
+            </li>
+            <li>
+              <Image src={nodeLogo} style={imgList} />
+            </li>
+            <li>
+              <Image src={htmlLogo} style={imgList} />
+            </li>
+            <li>
+              <Image src={cssLogo} style={imgList} />
+            </li>
+            <li>
+              <Image src={jsLogo} style={imgList} />
+            </li>
+            <li>
+              <Image src={bootLogo} style={imgList} />
+            </li>
+            <li>
+              <Image src={gatsbyLogo} style={imgList} />
+            </li>
+            <li>
+              <Image src={mochaLogo} style={imgList} />
+            </li>
+            <li>
+              <Image src={expLogo} style={imgList} />
+            </li>
+            <li>
+              <Image src={seleniumLogo} style={imgList} />
+            </li>
+            <li>
+              <Image src={mongoLogo} style={imgList} />
+            </li>
           </ul>
         </div>
         <div id="exp">
           <h2>Experience</h2>
-          <Button href="../../src/Gariel_Giles_QAResume.PDF" size="lg">Resume</Button>
+          <Button
+            href="https://drive.google.com/file/d/1Oa6Z7I-u9VE52yrh62SMyqz3toVv5jEm/view?usp=sharing"
+            target="_blank"
+          >
+            Resume
+          </Button>
+          {/* <iframe src="https://drive.google.com/file/d/1Oa6Z7I-u9VE52yrh62SMyqz3toVv5jEm/view?usp=sharing" width="500" height="720"/> */}
         </div>
         <div id="projects">
           <h2>Projects</h2>
+          <Card style={{ width: "18rem" }}>
+            <Card.Img variant="top" src="holder.js/100px180" />
+            <Card.Body>
+              <Card.Title>Grail Collect</Card.Title>
+              <Card.Text>
+              User can add their personal sneaker portfolio with current 
+              resale prices to keep track of the value of their collection.
+              </Card.Text>
+              <Button variant="primary">GitHub</Button>
+            </Card.Body>
+          </Card>
         </div>
         <div id="contact">
           <h2>Contact</h2>
