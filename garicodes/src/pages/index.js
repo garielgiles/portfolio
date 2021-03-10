@@ -1,5 +1,6 @@
 import * as React from "react";
 import { css } from "@emotion/react";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
 import Navbar from "react-bootstrap/Navbar";
@@ -7,6 +8,7 @@ import Nav from "react-bootstrap/Nav";
 import Image from "react-bootstrap/Image";
 import Card from "react-bootstrap/Card";
 import CardDeck from 'react-bootstrap/CardDeck'
+
 
 // styles
 const pageStyles = {
@@ -24,7 +26,7 @@ const headingAccentStyles = {
 };
 const paragraphStyles = {
   marginBottom: 48,
-  fontSize: "24px"
+  fontSize: "20px"
 };
 
 const listStyles = {
@@ -82,6 +84,14 @@ const logoList = {
   justifyContent: "space-evenly",
 };
 
+const socialsList = {
+  listStyleType: "none",
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "space-evenly",
+  // alignContent: "center"
+};
+
 // Color Schemes
 const navColor = {
   // backgroundColor: "#ff4e4e"
@@ -95,10 +105,17 @@ const navText = {
 
 const headStyle = {
   textAlign: 'center',
-  marginTop: '10%'
+  marginTop: '25%',
+  marginBottom: '5%'
+}
+
+const socials = {
+  minWidth: "40px",
+  maxWidth: "60px",
 }
 
 // Required Images
+const logo = require("./logo.png");
 const reactLogo = require("../images/tech/react.png");
 const nodeLogo = require("../images/tech/node.png");
 const jsLogo = require("../images/tech/js.png");
@@ -115,13 +132,24 @@ const grail = require("../images/projects/grailcollect.png");
 const superWiki = require("../images/projects/superwiki.png");
 const rm = require("../images/projects/rm.png");
 
+const linkedin = require("../images/socials/linkedin.png");
+const gh = require("../images/socials/gh.png");
+const email = require("../images/socials/email.png");
+
 // markup
 const IndexPage = () => {
   return (
     <html>
       <Navbar collapseOnSelect expand="lg" sticky="top" style={navColor} variant="light">
         <Navbar.Brand href="#home">
-          GARICODES
+        <img
+        alt=""
+        src={logo}
+        width="120"
+        height="70"
+        className="d-inline-block align-top"
+      />{' '}
+          
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -192,9 +220,9 @@ const IndexPage = () => {
         <div id="skills">
           {/* style={{background: "lightblue", position: 'relative', left: '0%', right: '0%'}} */}
           <h2 style={headStyle}>Tech Stack</h2>
-          <p style={paragraphStyles}>
+          {/* <p style={paragraphStyles}>
             Here are technologies I have experience with:
-          </p>
+          </p> */}
           <ul style={logoList}>
             <li>
               <Image src={reactLogo} style={imgList} />
@@ -203,7 +231,7 @@ const IndexPage = () => {
               <Image src={nodeLogo} style={imgList} />
             </li>
             <li>
-              <Image src={htmlLogo} style={imgList} />
+              <Image  src={htmlLogo} style={imgList} />
             </li>
             <li>
               <Image src={cssLogo} style={imgList} />
@@ -318,7 +346,11 @@ const IndexPage = () => {
         </div>
         <div id="contact"  style={headStyle}>
           <h2 style={headStyle}>Contact</h2>
-          <Button variant="danger">Red Danger</Button>
+          <ul style={socialsList}>
+            <li><a href="https://www.linkedin.com/in/gariel-giles/" target="_blank"><Image src={linkedin} style={socials} /></a></li>
+            <li><a href="https://github.com/garicodes" target="_blank"><Image src={gh} style={socials} ></Image></a></li>
+            <li><a href="mailto: hello@gari.codes" target="_blank"><Image src={email} style={socials} ></Image></a></li>
+          </ul>
         </div>
       </main>
     </html>
