@@ -200,7 +200,6 @@ const IndexPage = () => {
           </Button>{' '}
           <Button
             href="#contact"
-            target="_blank"
             variant="outline-dark"
             size="lg"
           >
@@ -282,13 +281,17 @@ const IndexPage = () => {
               </Card.Text>
               <Button
                 href="https://grail-collect.herokuapp.com/"
-                variant="dark" size="sm"
+                variant="dark"
+                size="sm"
+                target="_blank"
               >
                 Site
               </Button>{' '}
               <Button
                 href="https://github.com/garicodes/grail-collect"
-                variant="outline-dark" size="sm"
+                variant="outline-dark"
+                size="sm"
+                target="_blank"
               >
                 GitHub
               </Button>
@@ -304,7 +307,9 @@ const IndexPage = () => {
               </Card.Text>
               <Button
                 href="https://superwiki.herokuapp.com/"
-                variant="dark" size="sm"
+                variant="dark"
+                size="sm"
+                target="_blank"
               >
                 Site
               </Button>{' '}
@@ -312,6 +317,7 @@ const IndexPage = () => {
                 href="https://github.com/devkenney/arete-project-3-frontend"
                 variant="outline-dark"
                 size="sm"
+                target="_blank"
               >
                 GitHub
               </Button>
@@ -328,7 +334,9 @@ const IndexPage = () => {
               </Card.Text>
               <Button
                 href="https://rick-and-mortyapp.herokuapp.com/"
-                variant="dark" size="sm"
+                variant="dark"
+                size="sm"
+                target="_blank"
               >
                 Site
               </Button>{' '}
@@ -336,6 +344,7 @@ const IndexPage = () => {
                 href="https://github.com/garicodes/project_4_client"
                 variant="outline-dark"
                 size="sm"
+                target="_blank"
               >
                 GitHub
               </Button>
