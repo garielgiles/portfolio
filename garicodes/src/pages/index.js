@@ -20,10 +20,11 @@ const headingStyles = {
   maxWidth: 320,
 };
 const headingAccentStyles = {
-  color: "#663399",
+  color: "red",
 };
 const paragraphStyles = {
   marginBottom: 48,
+  fontSize: "24px"
 };
 
 const listStyles = {
@@ -92,6 +93,11 @@ const navText = {
   color: "#232129",
 };
 
+const headStyle = {
+  textAlign: 'center',
+  marginTop: '10%'
+}
+
 // Required Images
 const reactLogo = require("../images/tech/react.png");
 const nodeLogo = require("../images/tech/node.png");
@@ -113,11 +119,13 @@ const rm = require("../images/projects/rm.png");
 const IndexPage = () => {
   return (
     <html>
-      <Navbar sticky="top" style={navColor} variant="light">
+      <Navbar collapseOnSelect expand="lg" sticky="top" style={navColor} variant="light">
         <Navbar.Brand href="#home">
           GARICODES
         </Navbar.Brand>
-        <Nav className="justify-content-end">
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="justify-content-center">
           <Nav.Item>
             <Nav.Link style={navText} href="#about">
               About
@@ -144,7 +152,9 @@ const IndexPage = () => {
             </Nav.Link>
           </Nav.Item>
         </Nav>
+        </Navbar.Collapse>
       </Navbar>
+      
       <main style={pageStyles}>
         <title>Gariel Giles</title>
         <h1 style={headingStyles}>
@@ -153,16 +163,35 @@ const IndexPage = () => {
           <span style={headingAccentStyles}>
             — Welcome to my crib! Take a tour and get to know me.{" "}
           </span>
+          <br />
+          <Button
+            href="https://drive.google.com/file/d/1Oa6Z7I-u9VE52yrh62SMyqz3toVv5jEm/view?usp=sharing"
+            target="_blank" variant="dark" size="lg"
+          >
+            See Resume
+          </Button>{' '}
+          <Button
+            href="#contact"
+            target="_blank"
+            variant="outline-dark"
+            size="lg"
+          >
+            Contact
+          </Button>
           {/* <span role="img" aria-label="Party popper emojis">
             🎉🎉🎉
           </span> */}
         </h1>
         <div id="about">
-          <h2>Fun Facts</h2>
+          <h2 style={headStyle}>Fun Facts</h2>
+          <p style={paragraphStyles}>My name is Gariel <span>(g-AIR-REE-L)</span> Giles and I'm from the Windy City—<span style={headingAccentStyles}>Chicago, IL!</span></p>
+          <br />
+          <p style={paragraphStyles}>I am a sneaker collector and enthusiast, as well as an experienced QA Analyst with a background knowledge in Software Engineering. Below you'll see a few projects that highlight some of my skills.
+          </p>
         </div>
         <div id="skills">
           {/* style={{background: "lightblue", position: 'relative', left: '0%', right: '0%'}} */}
-          <h2>Tech Stack</h2>
+          <h2 style={headStyle}>Tech Stack</h2>
           <p style={paragraphStyles}>
             Here are technologies I have experience with:
           </p>
@@ -202,18 +231,17 @@ const IndexPage = () => {
             </li>
           </ul>
         </div>
-        <div id="exp">
-          <h2>Experience</h2>
+        {/* <div id="exp">
+          <h2 style={headStyle}>Experience</h2>
           <Button
             href="https://drive.google.com/file/d/1Oa6Z7I-u9VE52yrh62SMyqz3toVv5jEm/view?usp=sharing"
             target="_blank"
           >
             Resume
           </Button>
-          {/* <iframe src="https://drive.google.com/file/d/1Oa6Z7I-u9VE52yrh62SMyqz3toVv5jEm/view?usp=sharing" width="500" height="720"/> */}
-        </div>
+        </div> */}
         <div id="projects">
-          <h2>Projects</h2>
+          <h2 style={headStyle}>Projects</h2>
           <div>
             <CardDeck>
           <Card style={{ width: "18rem" }}>
@@ -226,13 +254,13 @@ const IndexPage = () => {
               </Card.Text>
               <Button
                 href="https://grail-collect.herokuapp.com/"
-                variant="primary" size="sm"
+                variant="dark" size="sm"
               >
                 Site
               </Button>{' '}
               <Button
                 href="https://github.com/garicodes/grail-collect"
-                variant="primary" size="sm"
+                variant="outline-dark" size="sm"
               >
                 GitHub
               </Button>
@@ -248,13 +276,13 @@ const IndexPage = () => {
               </Card.Text>
               <Button
                 href="https://superwiki.herokuapp.com/"
-                variant="primary" size="sm"
+                variant="dark" size="sm"
               >
                 Site
               </Button>{' '}
               <Button
                 href="https://github.com/devkenney/arete-project-3-frontend"
-                variant="primary"
+                variant="outline-dark"
                 size="sm"
               >
                 GitHub
@@ -272,13 +300,13 @@ const IndexPage = () => {
               </Card.Text>
               <Button
                 href="https://rick-and-mortyapp.herokuapp.com/"
-                variant="primary" size="sm"
+                variant="dark" size="sm"
               >
                 Site
               </Button>{' '}
               <Button
                 href="https://github.com/garicodes/project_4_client"
-                variant="primary"
+                variant="outline-dark"
                 size="sm"
               >
                 GitHub
@@ -288,8 +316,8 @@ const IndexPage = () => {
           </CardDeck>
           </div>
         </div>
-        <div id="contact">
-          <h2>Contact</h2>
+        <div id="contact"  style={headStyle}>
+          <h2 style={headStyle}>Contact</h2>
           <Button variant="danger">Red Danger</Button>
         </div>
       </main>
