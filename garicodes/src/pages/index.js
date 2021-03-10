@@ -5,7 +5,8 @@ import Button from "react-bootstrap/Button";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Image from "react-bootstrap/Image";
-import Card from 'react-bootstrap/Card'
+import Card from "react-bootstrap/Card";
+import CardDeck from 'react-bootstrap/CardDeck'
 
 // styles
 const pageStyles = {
@@ -104,12 +105,16 @@ const mochaLogo = require("../images/tech/mocha.png");
 const mongoLogo = require("../images/tech/mongo.png");
 const seleniumLogo = require("../images/tech/selenium.png");
 
+const grail = require("../images/projects/grailcollect.png");
+const superWiki = require("../images/projects/superwiki.png");
+const rm = require("../images/projects/rm.png");
+
 // markup
 const IndexPage = () => {
   return (
     <html>
       <Navbar sticky="top" style={navColor} variant="light">
-        <Navbar.Brand className="justify-content-start" href="#home">
+        <Navbar.Brand href="#home">
           GARICODES
         </Navbar.Brand>
         <Nav className="justify-content-end">
@@ -209,17 +214,79 @@ const IndexPage = () => {
         </div>
         <div id="projects">
           <h2>Projects</h2>
+          <div>
+            <CardDeck>
           <Card style={{ width: "18rem" }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
+            <Card.Img variant="top" src={grail} />
             <Card.Body>
               <Card.Title>Grail Collect</Card.Title>
               <Card.Text>
-              User can add their personal sneaker portfolio with current 
-              resale prices to keep track of the value of their collection.
+                User can add their personal sneaker portfolio with current
+                resale prices to keep track of the value of their collection.
               </Card.Text>
-              <Button variant="primary">GitHub</Button>
+              <Button
+                href="https://grail-collect.herokuapp.com/"
+                variant="primary" size="sm"
+              >
+                Site
+              </Button>{' '}
+              <Button
+                href="https://github.com/garicodes/grail-collect"
+                variant="primary" size="sm"
+              >
+                GitHub
+              </Button>
             </Card.Body>
           </Card>
+          <Card style={{ width: "18rem" }}>
+            <Card.Img variant="top" src={superWiki} />
+            <Card.Body>
+              <Card.Title>SuperWiki</Card.Title>
+              <Card.Text>
+                The SuperWiki is a database of everything Marvel that lets users
+                build an online collection of their favorites comics.
+              </Card.Text>
+              <Button
+                href="https://superwiki.herokuapp.com/"
+                variant="primary" size="sm"
+              >
+                Site
+              </Button>{' '}
+              <Button
+                href="https://github.com/devkenney/arete-project-3-frontend"
+                variant="primary"
+                size="sm"
+              >
+                GitHub
+              </Button>
+            </Card.Body>
+          </Card>
+          <Card style={{ width: "18rem" }}>
+            <Card.Img variant="top" src={rm} />
+            <Card.Body>
+              <Card.Title>Rick and Morty App</Card.Title>
+              <Card.Text>
+                The purpose of this site is to allow users to keep up with all
+                characters to be created on the hit show, Rick and Morty. Users
+                can also add new characters as the show progresses.
+              </Card.Text>
+              <Button
+                href="https://rick-and-mortyapp.herokuapp.com/"
+                variant="primary" size="sm"
+              >
+                Site
+              </Button>{' '}
+              <Button
+                href="https://github.com/garicodes/project_4_client"
+                variant="primary"
+                size="sm"
+              >
+                GitHub
+              </Button>
+            </Card.Body>
+          </Card>
+          </CardDeck>
+          </div>
         </div>
         <div id="contact">
           <h2>Contact</h2>
